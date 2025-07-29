@@ -5,6 +5,9 @@ import {recentSessions} from "@/constants";
 import {getAllCompanions, getRecentSessions} from "@/lib/actions/companion.actions";
 import {getSubjectColor} from "@/lib/utils";
 
+// Force dynamic rendering since we use authentication
+export const dynamic = 'force-dynamic';
+
 const Page = async () => {
     const companions = await getAllCompanions({ limit: 3 });
     const recentSessionsCompanions = await getRecentSessions(10);
